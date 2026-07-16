@@ -15,7 +15,7 @@ const copyPDFJS = () => ({
 })
 
 export default [{
-    input: 'rollup/fflate.js',
+    input: './rollup/fflate.js',
     output: {
         dir: 'vendor/',
         format: 'esm',
@@ -23,7 +23,7 @@ export default [{
     plugins: [nodeResolve(), terser()],
 },
 {
-    input: 'rollup/zip.js',
+    input: './rollup/zip.js',
     output: {
         dir: 'vendor/',
         format: 'esm',

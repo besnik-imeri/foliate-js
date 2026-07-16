@@ -800,7 +800,6 @@ export class Paginator extends HTMLElement {
     #filling = false // true while #fillVisibleArea is running
     #fillPromise = null // tracks in-progress #fillVisibleArea for awaiting
     #stabilizing = false // true while #display is stabilizing layout
-    #rendered = false // true after first #display completes
     constructor() {
         super()
         this.#root.innerHTML = `<style>
@@ -963,7 +962,7 @@ export class Paginator extends HTMLElement {
                     }
                 }
             } else if (!this.scrolled) {
-              this.#afterScroll('container-scroll')
+                this.#afterScroll('container-scroll')
             }
         }, 250)
         this.#container.addEventListener('scroll', () => {
@@ -1869,7 +1868,6 @@ export class Paginator extends HTMLElement {
         if (hasFocus) this.focusView()
         // Reveal content now that primary section is positioned
         this.#container.style.opacity = '1'
-        this.#rendered = true
         // Emit stabilized so listeners can react, but keep #stabilizing
         // true until fill completes to prevent the debounced scroll
         // handler from loading backward sections during rapid DOM changes.
@@ -1974,7 +1972,7 @@ export class Paginator extends HTMLElement {
         if (!size) return
         const maxDistance = size * 10
         const viewportEnd = this.#renderedEnd
-        for (const [index, view] of this.#sortedViews) {
+        for (const [index] of this.#sortedViews) {
             if (index <= this.#primaryIndex) continue
             const offset = this.#getViewOffset(index)
             if (offset - viewportEnd > maxDistance) {

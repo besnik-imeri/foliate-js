@@ -186,7 +186,6 @@ function* getPDFSentenceBlocks(doc, textLayer) {
     nodes = collectNodes()
     cum = 0
     let groupStart = 0
-    let blockCount = 0
 
     for (let i = 0; i < nodes.length; i++) {
         cum += nodes[i].nodeValue.length
@@ -195,10 +194,7 @@ function* getPDFSentenceBlocks(doc, textLayer) {
             const range = doc.createRange()
             range.setStart(nodes[groupStart], 0)
             range.setEnd(nodes[i], nodes[i].nodeValue.length)
-            if (!rangeIsEmpty(range)) {
-                blockCount++
-                yield range
-            }
+            if (!rangeIsEmpty(range)) yield range
             groupStart = i + 1
         }
     }

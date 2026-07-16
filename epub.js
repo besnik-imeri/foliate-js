@@ -902,7 +902,7 @@ class Loader {
     async loadReplaced(item, parents = []) {
         const { href, mediaType } = item
         const parent = parents.at(-1)
-        let str = ''
+        let str
         try {
             str = await this.loadText(href)
         } catch (e) {
