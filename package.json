@@ -2,6 +2,18 @@
   "name": "foliate-js",
   "version": "0.0.0",
   "description": "Render e-books in the browser",
+  "packageManager": "npm@11.17.0",
+  "engines": {
+    "node": ">=24.0.0 <25",
+    "npm": ">=11.17.0 <12"
+  },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "24.19.0",
+      "onFail": "error"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/johnfactotum/foliate-js.git"
@@ -20,13 +32,14 @@
     "@eslint/js": "^10.0.1",
     "@rollup/plugin-node-resolve": "^16.0.3",
     "@rollup/plugin-terser": "^1.0.0",
-    "@zip.js/zip.js": "^2.8.26",
-    "eslint": "^10.0.1",
+    "@zip.js/zip.js": "2.8.26",
+    "@microsoft/eslint-formatter-sarif": "3.1.0",
+    "eslint": "^10.8.1",
     "fflate": "^0.8.3",
-    "fs-extra": "^11.3.6",
-    "globals": "^17.7.0",
-    "pdfjs-dist": "^6.1.200",
-    "rollup": "^4.62.2"
+    "fs-extra": "^11.4.0",
+    "globals": "^17.11.0",
+    "pdfjs-dist": "^6.2.108",
+    "rollup": "^4.62.4"
   },
   "scripts": {
     "build": "rollup -c",
@@ -48,5 +61,8 @@
   ],
   "dependencies": {
     "construct-style-sheets-polyfill": "^3.1.0"
+  },
+  "overrides": {
+    "picomatch": "2.3.2"
   }
 }
