@@ -2,15 +2,15 @@
   "name": "foliate-js",
   "version": "0.0.0",
   "description": "Render e-books in the browser",
-  "packageManager": "npm@11.17.0",
+  "packageManager": "npm@11.19.1",
   "engines": {
     "node": ">=24.0.0 <25",
-    "npm": ">=11.17.0 <12"
+    "npm": ">=11.19.1 <12"
   },
   "devEngines": {
     "runtime": {
       "name": "node",
-      "version": "24.19.0",
+      "version": "24.22.3",
       "onFail": "error"
     }
   },
@@ -31,15 +31,15 @@
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@rollup/plugin-node-resolve": "^16.0.3",
-    "@rollup/plugin-terser": "^1.0.0",
+    "@rollup/plugin-terser": "^1.0.2",
     "@zip.js/zip.js": "2.8.26",
     "@microsoft/eslint-formatter-sarif": "3.1.0",
-    "eslint": "^10.8.1",
+    "eslint": "^10.15.0",
     "fflate": "^0.8.3",
-    "fs-extra": "^11.4.0",
-    "globals": "^17.11.0",
-    "pdfjs-dist": "^6.2.108",
-    "rollup": "^4.62.4"
+    "fs-extra": "^11.4.1",
+    "globals": "^17.14.0",
+    "pdfjs-dist": "^6.5.438",
+    "rollup": "^4.68.7"
   },
   "scripts": {
     "build": "rollup -c",
